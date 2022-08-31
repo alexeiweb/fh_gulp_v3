@@ -1,0 +1,181 @@
+.modal {  
+  max-width: 780px;
+  width: 100%;
+  margin: auto;
+  cursor: default; /* убирает курсор в модальном окне */
+  text-align: left;
+  white-space: normal;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.36s ease-in-out visibility 0.36s ease-in-out;
+  
+  &__container {
+    position: relative;
+    padding: 50px 100px;
+    background-color: $bg-color;
+    border-radius: 20px;
+  }
+
+  &__title {
+    font-weight: 700;  
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    color: $orange-color;
+    margin: 0 auto 30px; /* 30px - margin-bottom */
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__subtitle span {
+    font-weight: 500;
+    color: $orange-color;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    font-weight: 500;
+    margin-bottom: 60px;
+
+    &_phone {
+      &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        margin-right: 14px;
+        background: url("../img/call.svg") no-repeat;
+      }
+    }
+
+    &_email {
+      &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        margin-right: 14px;
+        background: url("../img/mail.svg") no-repeat;
+      }
+    }
+  }
+  
+  &_active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__data {
+    display: flex;  
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-bottom: 40px;
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  &__input {  
+    display: block;
+    width: 280px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 16px;
+    padding-left: 25px;
+    padding-right: 15px;
+    border: none;
+
+    &:hover {
+      border: 1px solid #CBCBCB;
+    }
+    
+    &:focus {
+      border: 1px solid $main-color;
+    }
+  }
+
+  &__form {
+    &_btn {
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  &__btn {
+    &_image {
+      transition: .3s ease-in-out;
+
+      &:hover {
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+      }
+
+      &:focus {
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+      }
+    }
+  }
+  
+  &__btn {
+    &_text {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $orange-color;
+    transition: .3s ease-in-out;
+
+      &:hover {
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 25px;
+    top: 20px;  
+    border: none;
+    background-color: transparent;
+    line-height: 0; /* чтобы убрать у SVG отступ снизу */
+    color: inherit;
+  }
+}
+
+.overlay {  
+  position: fixed;
+  display: flex;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  overflow-y: auto; /* чтобы повертикали, прои необходимости появлялась полоса прокрутки */
+  overflow-x: hidden; /* чтобы по горизонтали не появлялась полоса прокрутки */
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: .36s;
+  transition-timing-function: ease-in-out;
+  white-space: nowrap; /* Чтобы не переносились inline блоки */
+  text-align: center; /* позиционирует контент по центру */
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &:after { /* с помощью данной конструкции элемент модального окна будет позиционироваться ровно по центру */
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}

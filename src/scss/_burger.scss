@@ -1,0 +1,58 @@
+.burger {
+  &__menu {
+    position: relative;
+    max-width: 394px;
+    width: 100%;
+    background-color: $bg-color;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      top: -27px;
+      width: 52px;
+      height: 30px;
+      background-image: url('../img/triangle.svg');
+      z-index: -1;
+    }
+  
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      bottom: 0;
+      width: 100%;
+      height: 10px;
+      background-color: $orange-color;
+    }
+  
+    &_list {
+      padding-top: 70px;
+      padding-left: 39px;
+      padding-bottom: 50px;
+    }
+
+    &_item {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__hr {
+    color: $orange-color; /* Устанавливаем цвет линии */
+    background-color: $orange-color; /* Для кроссбраузерности (Opera и Firefox) */
+    max-width: 334px;
+    width: 100%;
+    height: 1px; /* Задаем толщину */
+    border: none; /* Отменяем отображение границы (Firefox) */
+    padding-left: 20px;
+    margin-bottom: 15px;
+    padding-right: 40px;
+  }
+}

@@ -1,0 +1,52 @@
+.header {
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 21px;
+  }
+  
+  &__burger {
+    margin-right: 120px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      opacity: 0.6;  
+    }
+  }
+
+  &__phone {
+    position: relative;
+    font-weight: 500;
+
+    @media (max-width: 1280px) {
+      font-size: 18px;
+      line-height: 24px;
+
+      &:before {
+        left: -30px;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @media (max-width: 1280px) {
+      width: 300px;
+    }
+
+    @media (max-width: 767px) {
+      width: 161px;
+    }
+  }
+
+  &__burger {
+    @media (max-width: 767px) {
+      margin-right: 0;
+    }
+  }
+}

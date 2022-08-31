@@ -1,0 +1,14 @@
+$main-color: #282626;
+$bg-color: #F2F0F1;
+$orange-color: #FF8A00;
+$text-color: #fff;
+
+@mixin font($name, $weight) {
+  font: {
+    family: $name;
+    weight: $weight;
+    display: swap;
+  }
+  src: url('../fonts/#{ $name }-#{ $weight }.woff2') format('woff2'),
+    url('../fonts/#{ $name }-#{ $weight }.woff') format('woff'),
+}

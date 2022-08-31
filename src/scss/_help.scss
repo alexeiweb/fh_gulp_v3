@@ -1,0 +1,125 @@
+.help {
+  text-align: center;
+  background-color: $bg-color;
+  counter-reset: my-count;
+  
+  &__title {
+    color: $orange-color;
+    margin-bottom: 50px;
+  }
+
+  &__desc {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__financial {
+    display: flex;
+
+    &_title {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    &_left {
+      max-width: 480px;
+      text-align: left;
+      padding-left: 100px;
+      margin-right: 120px;
+    }
+
+    &_right {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 50px;
+
+      &_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;  
+      }
+    }
+  }
+  &__volunteer {
+    &_wrapper {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 50px;
+  }
+
+    &_title {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 40px;
+      padding-left: 100px;
+      margin-bottom: 50px;
+      text-align: left;
+    }
+
+    &_right {
+      max-width: 580px;
+      text-align: left;
+      padding-top: 30px;
+    }
+  }
+  &__conservator {
+    display: flex;
+
+    &_left {
+      max-width: 580px;
+      padding-left: 100px;
+      text-align: left;
+      padding-top: 30px;
+      margin-right: 20px;
+    }
+
+    &_title {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    &_right {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    &_add {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  &__btn {
+    width: 180px;
+    margin-bottom: 40px;
+  }
+}
+
+.title-before {
+  &:before {  
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    font-size: 50px;
+    counter-increment: my-count;
+    content: counter(my-count);
+    color: $orange-color;
+    margin-right: 20px;
+    background-color: #fff;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 22px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }  
+}

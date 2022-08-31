@@ -1,0 +1,83 @@
+html {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: HelveticaNeueCyr, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $main-color;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 45px 0;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 130px;
+  margin: 0 auto;
+
+  @media (max-width: 1280px) {
+    padding: 0 70px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 25px;
+  }
+}
+
+.title {
+  font-family: Comfortaa, sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.btn-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $orange-color;
+}

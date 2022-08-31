@@ -1,0 +1,41 @@
+.pets {
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 280px 180px 80px 180px 380px;
+    gap: 50px 20px;
+  }
+  
+  & figure {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.item-1 {
+  grid-column: 1/3;  
+}
+
+.item-2 {
+  grid-column: 3/5;
+}
+
+.item-3 {
+  grid-column: 5/6;
+  grid-row: 1/3;
+}
+
+.item-4 {
+  grid-column: 1/2;
+}
+
+.item-5 {
+  grid-column: 2/4;
+}
+
+.item-6 {
+  grid-column: 4/5;
+}

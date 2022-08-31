@@ -1,0 +1,44 @@
+.about {
+  background-color: $bg-color;
+  padding-top: 90px;
+
+  &__wrapper {
+    display: flex;
+    gap: 120px;
+  }
+  
+  &__left {
+    max-width: 480px;  
+  }
+  
+  &__title {
+    margin-bottom: 30px;
+  }
+  
+  &__desc {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__right {
+    text-align: end;
+  }
+
+  &__link {
+    font-weight: 500;
+    color: $orange-color;
+    padding-right: 15px;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 26px;
+      height: 16px;
+      background-image: url("../img/arrow.svg");
+      transform: translate(15px, 2px);
+    }
+  }  
+}
