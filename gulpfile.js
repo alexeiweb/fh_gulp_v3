@@ -9,10 +9,14 @@ import cleanCss from 'gulp-clean-css';
 import gulpImg from 'gulp-image';
 import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
+import { stream as critical } from 'critical';
+import gulpif from 'gulp-if';
 
   const del = deleteAsync;
 
   const prepros = true;
+
+  let prod = true;
 
   const sass = gulpSass(sassPkg);
 
@@ -31,7 +35,7 @@ export const style = () => {
   if (prepros) {
     return gulp
     .src('src/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError)) // Чтобы ошибки отобрпажались при сборке
+    .pipe(sass().on('error', sass.logError)) // Чтобы ошибки отображались при сборке
     .pipe(cleanCss({
       2: {
         specialComments: 0,
@@ -90,6 +94,18 @@ export const avif = () => gulp
   .pipe(gulp.dest('dist/img'))
   .pipe(browserSync.stream());
 
+export const critCss = () => gulp
+  .src('dist/*.html')
+  .pipe(critical({
+    base: 'dist/',
+    inline: true,
+    css: ['dist/css/index.css']
+  }))
+  .on('error', err => {
+    console.error(err.message)
+  })
+  .pipe(gulp.dest('dist'))
+
 export const copy = () => gulp
   .src([
     'src/fonts/**/*',
@@ -129,8 +145,12 @@ export const clear = () => del('dist/**/*', {forse: true,});
 
 // запуск
 
+export const develop = async() => {
+  prod = false;
+}
+
 export const base = gulp.parallel(html, style, js, img, avif, webp, copy);
 
-export const build = gulp.series(clear, base);
+export const build = gulp.series(clear, base, critCss);
 
-export default gulp.series(base, server);
+export default gulp.series(develop, base, server);
