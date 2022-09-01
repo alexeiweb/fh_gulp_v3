@@ -38,6 +38,16 @@
       width: 26px;
       height: 16px;
       background-image: url("../img/arrow.svg");
+      // background-image: -webkit-image-set(
+      //   url("../img/arrow.avif") 1x,
+      //   url("../img/arrow.webp") 1x,
+      //   url("../img/arrow.svg") 1x
+      // );
+      // background-image: image-set(
+      //   url("../img/arrow.avif") 1x,
+      //   url("../img/arrow.webp") 1x,
+      //   url("../img/arrow.svg") 1x
+      // );
       transform: translate(15px, 2px);
     }
   }  

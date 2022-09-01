@@ -20,7 +20,11 @@
           </svg>
         </button>
         
-        <img src="img/logo.png" class="header__logo" alt="Логотип приюта для животных Friendly House">
+        <picture>
+          <source srcset="img/logo.avif" type="image/avif">
+          <source srcset="img/logo.webp" type="image/webp">
+          <img src="img/logo.png" class="header__logo" alt="Логотип приюта для животных Friendly House" width="356" height="72">
+        </picture>
 
         <a class="header__phone" href="tel:88493003957" >8 (849) 300 - 39 - 57</a>
       </nav>
@@ -28,39 +32,26 @@
   </header>
 
   <main class="main">
-    <section class="hero" hidden>
-      <div class="container">
-        <div class="hero__wrapper">
-          <div class="hero__left">
-            <h1 class="hero__title title"><span>Сара ждёт,</span> когда найдётся её человек</h1>
-  
-            <label>
-              <button class="hero__btn" type="submit">
-                <img src="img/hero_btn.png" alt="" class="hero__btn_image">
-    
-                <p class="hero__btn_text btn-text">Жми на лапку, чтобы помочь!</p>
-              </button>
-            </label>
-          </div>
-  
-          <div class="hero__right">
-            <img src="img/sara.jpg" alt="Фотография Сары" class="hero__image" width="580" height="580">
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="hero">
       <div class="container">
         <div class="hero__wrapper">
           <h1 class="hero__title title"><span>Сара ждёт,</span> когда найдётся её человек</h1>
 
-          <img src="img/sara.jpg" alt="Фотография Сары" class="hero__image" width="580" height="580">
+          <picture>
+            <source srcset="img/sara.avif" type="image/avif">
+            <source srcset="img/sara.webp" type="image/webp">
+            <img src="img/sara.jpg" alt="Фотография Сары" class="hero__image" width="580" height="580">
+          </picture>
+          
   
           <label>
             <button class="hero__btn" type="submit">
-              <img src="img/hero_btn.png" alt="" class="hero__btn_image">
-  
+              <picture>
+                <source srcset="img/hero_btn.avif" type="image/avif">
+                <source srcset="img/hero_btn.webp" type="image/webp">
+                <img src="img/hero_btn.png" alt="Картинка лапки" class="hero__btn_image" width="111" height="101">
+              </picture>
+                
               <p class="hero__btn_text btn-text">Жми на лапку, чтобы помочь!</p>
             </button>
           </label>          
@@ -80,7 +71,11 @@
           </div>
 
           <div class="about__right">
-            <img src="img/about.jpg" alt="" class="about__image" width="580" height="330">
+            <picture>
+              <source srcset="img/about.avif" type="image/avif">
+              <source srcset="img/about.webp" type="image/webp">
+              <img src="img/about.jpg" alt="" class="about__image" width="580" height="330">
+            </picture>            
 
             <a href="#" class="about__link">СМИ о нас</a>
           </div>
@@ -96,7 +91,11 @@
           <div class="project__left">
             <ul class="project__left_list">
               <li class="project__left_item">
-                <img src="img/project1.jpg" alt="Фотография новый дом для животных" class="project__left_image">
+                <picture>
+                  <source srcset="img/project1.avif" type="image/avif">
+                  <source srcset="img/project1.webp" type="image/webp">
+                  <img src="img/project1.jpg" alt="Фотография новый дом для животных" class="project__left_image" width="280" height="180">
+                </picture>                
 
                 <div class="project__left_description">
                   <h3 class="project__left_title">Новый дом для животных</h3>
@@ -110,7 +109,11 @@
               </li>
 
               <li class="project__left_item">
-                <img src="img/project2.jpg" alt="Фотография маленькие модники" class="project__left_image">
+                <picture>
+                  <source srcset="img/project2.avif" type="image/avif">
+                  <source srcset="img/project2.webp" type="image/webp">
+                  <img src="img/project2.jpg" alt="Фотография маленькие модники" class="project__left_image" width="280" height="180">
+                </picture>
 
                 <div class="project__left_description">
                   <h3 class="project__left_title">Маленькие модники</h3>
@@ -124,7 +127,11 @@
               </li>
 
               <li class="project__left_item">
-                <img src="img/project3.jpg" alt="Фотография Поиграй со мной!" class="project__left_image">
+                <picture>
+                  <source srcset="img/project3.avif" type="image/avif">
+                  <source srcset="img/project3.webp" type="image/webp">
+                  <img src="img/project3.jpg" alt="Фотография Поиграй со мной!" class="project__left_image" width="280" height="180">
+                </picture>
 
                 <div class="project__left_description">
                   <h3 class="project__left_title">Поиграй со мной!</h3>
@@ -138,7 +145,11 @@
               </li>
 
               <li class="project__left_item">
-                <img src="img/project4.jpg" alt="Фотография Конкурс “Лучшее фото”" class="project__left_image">
+                <picture>
+                  <source srcset="img/project4.avif" type="image/avif">
+                  <source srcset="img/project4.webp" type="image/webp">
+                  <img src="img/project4.jpg" alt="Фотография Конкурс “Лучшее фото”" class="project__left_image" width="280" height="180">
+                </picture>
 
                 <div class="project__left_description">
                   <h3 class="project__left_title">Конкурс “Лучшее фото”</h3>
@@ -167,51 +178,99 @@
             <div class="project__right_wrapper">
               <div class="project__right_content">
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project6.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project6.avif" type="image/avif">
+                    <source srcset="img/project6.webp" type="image/webp">
+                    <img src="img/project6.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project7.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project7.avif" type="image/avif">
+                    <source srcset="img/project7.webp" type="image/webp">
+                    <img src="img/project7.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project8.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project8.avif" type="image/avif">
+                    <source srcset="img/project8.webp" type="image/webp">
+                    <img src="img/project8.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project9.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project9.avif" type="image/avif">
+                    <source srcset="img/project9.webp" type="image/webp">
+                    <img src="img/project9.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project10.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project10.avif" type="image/avif">
+                    <source srcset="img/project10.webp" type="image/webp">
+                    <img src="img/project10.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project11.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project11.avif" type="image/avif">
+                    <source srcset="img/project11.webp" type="image/webp">
+                    <img src="img/project11.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project12.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project12.avif" type="image/avif">
+                    <source srcset="img/project12.webp" type="image/webp">
+                    <img src="img/project12.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project13.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project13.avif" type="image/avif">
+                    <source srcset="img/project13.webp" type="image/webp">
+                    <img src="img/project13.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project14.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project14.avif" type="image/avif">
+                    <source srcset="img/project14.webp" type="image/webp">
+                    <img src="img/project14.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project15.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project15.avif" type="image/avif">
+                    <source srcset="img/project15.webp" type="image/webp">
+                    <img src="img/project15.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project16.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project16.avif" type="image/avif">
+                    <source srcset="img/project16.webp" type="image/webp">
+                    <img src="img/project16.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>
 
                 <a href="#" class="project__right_content_link">
-                  <img src="img/project17.jpg" alt="" class="project__right_content_image">
+                  <picture>
+                    <source srcset="img/project17.avif" type="image/avif">
+                    <source srcset="img/project17.webp" type="image/webp">
+                    <img src="img/project17.jpg" alt="" class="project__right_content_image" width="80" height="70">
+                  </picture>
                 </a>                
               </div>
             </div>
@@ -237,12 +296,24 @@
 
           <div class="help__financial_right">
             <div class="help__financial_right_wrapper">
-              <img src="img/help1.jpg" alt="" class="help__financial_image" width="180" height="139">
+              <picture>
+                <source srcset="img/help1.avif" type="image/avif">
+                <source srcset="img/help1.webp" type="image/webp">
+                <img src="img/help1.jpg" alt="" class="help__financial_image" width="180" height="139">
+              </picture>
 
-              <img src="img/help2.jpg" alt="" class="help__financial_image" width="180" height="139">
+              <picture>
+                <source srcset="img/help2.avif" type="image/avif">
+                <source srcset="img/help2.webp" type="image/webp">
+                <img src="img/help2.jpg" alt="" class="help__financial_image" width="180" height="139">
+              </picture>              
             </div>
 
-            <img src="img/help3.jpg" alt="" class="help__financial_image" width="380" height="298">
+            <picture>
+              <source srcset="img/help3.avif" type="image/avif">
+              <source srcset="img/help3.webp" type="image/webp">
+              <img src="img/help3.jpg" alt="" class="help__financial_image" width="380" height="298">
+            </picture>
           </div>
         </div>
 
@@ -251,7 +322,11 @@
 
           <div class="help__volunteer_wrapper">
             <div class="help__volunteer_left">
-              <img src="img/help4.jpg" alt="" class="help__financial_image" width="580" height="349">
+              <picture>
+                <source srcset="img/help4.avif" type="image/avif">
+                <source srcset="img/help4.webp" type="image/webp">
+                <img src="img/help4.jpg" alt="" class="help__financial_image" width="580" height="349">
+              </picture>
             </div>
   
             <div class="help__volunteer_right">
@@ -280,19 +355,36 @@
           </div>
 
           <div class="help__conservator_right">
-            <img src="img/help5.jpg" alt="" class="help__financial_image" width="280" height="382">
+
+            <picture>
+              <source srcset="img/help5.avif" type="image/avif">
+              <source srcset="img/help5.webp" type="image/webp">
+              <img src="img/help5.jpg" alt="" class="help__financial_image" width="280" height="382">
+            </picture>
 
             <div class="help__conservator_add">
-              <img src="img/help6.jpg" alt="" class="help__financial_image" width="280" height="181">
+              <picture>
+                <source srcset="img/help6.avif" type="image/avif">
+                <source srcset="img/help6.webp" type="image/webp">
+                <img src="img/help6.jpg" alt="" class="help__financial_image" width="280" height="181">
+              </picture>
 
-              <img src="img/help7.jpg" alt="" class="help__financial_image" width="280" height="181">
+              <picture>
+                <source srcset="img/help7.avif" type="image/avif">
+                <source srcset="img/help7.webp" type="image/webp">
+                <img src="img/help7.jpg" alt="" class="help__financial_image" width="280" height="181">
+              </picture>
             </div>
           </div>          
         </div>
 
         <label>
           <button class="help__btn" type="submit">
-            <img src="img/hero_btn.png" alt="" class="hero__btn_image">
+            <picture>
+              <source srcset="img/hero_btn.avif" type="image/avif">
+              <source srcset="img/hero_btn.webp" type="image/webp">
+              <img src="img/hero_btn.png" alt="Картинка лапки" class="hero__btn_image" width="111" height="101">
+            </picture>
   
             <p class="hero__btn_text btn-text">Жми на лапку, чтобы помочь!</p>
           </button>
@@ -306,37 +398,61 @@
 
         <div class="pets__list">
           <figure class="pets__item item-1">
-            <img src="img/pets1.jpg" alt="">
+            <picture>
+              <source srcset="img/pets1.avif" type="image/avif">
+              <source srcset="img/pets1.webp" type="image/webp">
+              <img src="img/pets1.jpg" alt="" width="480" height="280">
+            </picture>
 
             <figcaption>Твинки и Пинки, 2 месяца</figcaption>
           </figure>
 
           <figure class="pets__item item-2">
-            <img src="img/pets2.jpg" alt="">
+            <picture>
+              <source srcset="img/pets2.avif" type="image/avif">
+              <source srcset="img/pets2.webp" type="image/webp">
+              <img src="img/pets2.jpg" alt="" width="280" height="280">
+            </picture>
 
             <figcaption>Мурзик, 6 месяцев</figcaption>
           </figure>
 
           <figure class="pets__item item-3">
-            <img src="img/pets3.jpg" alt="">
+            <picture>
+              <source srcset="img/pets3.avif" type="image/avif">
+              <source srcset="img/pets3.webp" type="image/webp">
+              <img src="img/pets3.jpg" alt="" width="380" height="650">
+            </picture>
 
             <figcaption>Миша (кот) и Ричард (пёс), 3 года и 5 лет</figcaption>
           </figure>
 
           <figure class="pets__item item-4">
-            <img src="img/pets4.jpg" alt="">
+            <picture>
+              <source srcset="img/pets4.avif" type="image/avif">
+              <source srcset="img/pets4.webp" type="image/webp">
+              <img src="img/pets4.jpg" alt="" width="280" height="280">
+            </picture>
 
             <figcaption>Джек, 1 год</figcaption>
           </figure>
 
           <figure class="pets__item item-5">
-            <img src="img/pets5.jpg" alt="">
+            <picture>
+              <source srcset="img/pets5.avif" type="image/avif">
+              <source srcset="img/pets5.webp" type="image/webp">
+              <img src="img/pets5.jpg" alt="" width="280" height="280">
+            </picture>
 
             <figcaption>Джерри, 3 недели</figcaption>
           </figure>
           
           <figure class="pets__item item-6">
-            <img src="img/pets8.jpg" alt="">
+            <picture>
+              <source srcset="img/pets8.avif" type="image/avif">
+              <source srcset="img/pets8.webp" type="image/webp">
+              <img src="img/pets8.jpg" alt="" width="180" height="280">
+            </picture>
 
             <figcaption>Рокки и Сеня, 2 и 3 года</figcaption>
           </figure>
@@ -372,7 +488,11 @@
   
         <label class="contacts__form_send">
           <button class="contacts__form_btn" type="submit">
-            <img src="img/footer_btn.png" alt="" class="contacts__btn_image">
+            <picture>
+              <source srcset="img/footer_btn.avif" type="image/avif">
+              <source srcset="img/footer_btn.webp" type="image/webp">
+              <img src="img/footer_btn.png" alt="" class="contacts__btn_image" width="73" height="71">
+            </picture>
   
             <p class="contacts__btn_text">Отправить</p>
           </button>
@@ -426,7 +546,11 @@
           </fieldset>
   
           <button class="modal__form_btn" type="submit">
-            <img src="img/footer_btn.png" alt="Изображение кнопки Отправить" class="modal__btn_image">
+            <picture>
+              <source srcset="img/footer_btn.avif" type="image/avif">
+              <source srcset="img/footer_btn.webp" type="image/webp">
+              <img src="img/footer_btn.png" alt="Изображение кнопки Отправить" class="modal__btn_image" width="73" height="71">
+            </picture>
   
             <p class="modal__btn_text btn-text">Отправить</p>
           </button>
