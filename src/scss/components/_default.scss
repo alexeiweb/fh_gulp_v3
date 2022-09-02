@@ -24,9 +24,10 @@ img {
   height: auto;
 }
 
-// picture {
-//   background-color: red;
-// }
+picture {
+  background-color: red;
+  line-height: initial;
+}
 
 button {
   padding: 0;
@@ -64,6 +65,10 @@ section {
 
   @media (max-width: 1280px) {
     padding: 0 70px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 0 34px;
   }
 
   @media (max-width: 767px) {
