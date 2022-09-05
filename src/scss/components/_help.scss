@@ -69,6 +69,11 @@
       display: flex;
       gap: 20px;
       margin-bottom: 50px;
+      
+      .image-cover {
+        height: 298px;
+        object-fit: cover;
+      }
 
       @media (max-width: 1000px) {
         justify-content: space-between;
@@ -78,6 +83,11 @@
         display: flex;
         flex-direction: column;
         gap: 20px;  
+      }
+      
+      .image-cover {
+        height: 139px;
+        object-fit: cover;
       }
     }
   }
