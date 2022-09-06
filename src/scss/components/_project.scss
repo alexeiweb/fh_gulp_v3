@@ -2,6 +2,10 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -42,6 +46,12 @@
       @media (max-width: 1023px) {
         height: 104px;
       }
+
+      @media (max-width: 767px) {
+        width: 130px;
+        height: 134px;
+        object-fit: cover;
+      }
     }
     
     &_description {
@@ -77,12 +87,19 @@
         line-height: 24px;
         margin-bottom: 3px;
       }
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 10px;
+      }
     }
   
     &_text {
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 20px;
+      overflow: hidden;
       text-overflow: ellipsis;
       max-height: 58px;
 
@@ -96,6 +113,10 @@
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 10px;
+      }
+
+      @media (max-width: 767px) {
+        margin-bottom: 13px;
       }
     }
   }
@@ -177,6 +198,7 @@
       @media (max-width: 1023px) {
         width: 220px;
         height: 271px;
+        margin: 0;
         margin-bottom: 20px;
       }
     }
