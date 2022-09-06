@@ -1,8 +1,4 @@
 .project {
-  &__title {
-    margin-bottom: 50px;
-  }
-  
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -13,12 +9,22 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
+
+      @media (max-width: 1023px) {
+        gap: 20px;
+      }
     }
     
     &_item {
       display: flex;
       max-width: 680px;
       width: 100%;
+      gap: 20px;
+
+      @media (max-width: 1023px) {
+        max-width: 420px;
+        gap: 10px;
+      }
 
       &:focus {
         border: 1px solid $orange-color;
@@ -27,26 +33,70 @@
 
     &_image {
       margin-right: 20px;
+
+      @media (max-width: 1280px) {
+        width: 200px;
+        height: 130px;
+      }
+
+      @media (max-width: 1023px) {
+        height: 104px;
+      }
     }
     
     &_description {
       max-width: 380px;
       width: 100%;
+
+      @media (max-width: 1280px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 3px;
+      }
     }
-    
+
     &_title {
       font-weight: 500;
       font-size: 30px;
       line-height: 40px;
       margin-bottom: 15px;
+
+      @media (max-width: 1280px) {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 7px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 3px;
+      }
     }
-    
+  
     &_text {
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 20px;
       text-overflow: ellipsis;
       max-height: 58px;
+
+      @media (max-width: 1280px) {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 11px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -55,6 +105,16 @@
     font-size: 20px;
     line-height: 26px;
     color: $orange-color;
+
+    @media (max-width: 1280px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
 
     &:after {
       content: "";
@@ -67,6 +127,28 @@
   }
 
   &__right {
+    &_wrapper {
+      .project__link {
+        display: none;
+
+        @media (max-width: 1280px) {
+          display: block;
+          text-align: end;
+          padding-top: 19px;
+          padding-right: 24px;
+        }
+
+        @media (max-width: 1023px) {
+          padding-top: 0;
+          padding-right: 85px;
+        }
+      }
+
+      @media (max-width: 1280px) {
+        max-width: 290px;
+      }      
+    }
+
     &_banner {
       position: relative;
       width: 380px;
@@ -85,6 +167,18 @@
       background-repeat: no-repeat;
       background-size: cover;
       margin-bottom: 52px;
+
+      @media (max-width: 1280px) {
+        width: 280px;
+        height: 332px;
+        margin-bottom: 33px;
+      }
+
+      @media (max-width: 1023px) {
+        width: 220px;
+        height: 271px;
+        margin-bottom: 20px;
+      }
     }
 
     &_description {
@@ -96,6 +190,16 @@
       font-size: 30px;
       line-height: 40px;
       color: #fff;
+
+      @media (max-width: 1280px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @media (max-width: 1280px) {
+        font-size: 18px;
+        line-height: 24px;
+      }
     }
 
     &_banner {
@@ -111,6 +215,18 @@
       font-size: 20px;
       line-height: 26px;
       margin-bottom: 22px;
+
+      @media (max-width: 1280px) {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 6px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
     }
     
     &_content {
@@ -119,7 +235,35 @@
       gap: 22px;
       max-width: 400px;
       width: 100%;
+
+      @media (max-width: 1280px) {
+        gap: 20px;
+      }
+
+      @media (max-width: 1023px) {
+        gap: 18px 20px;
+      }
+
+      &_link {
+        &:nth-child(n+7) {
+          @media (max-width: 1280px) {
+            display: none;
+          }        
+        }
+      }
+      
+
+      &_image {
+        @media (max-width: 1280px) {
+          width: 80px;
+          height: 70px;
+        }
+
+        @media (max-width: 1023px) {
+          width: 60px;
+          height: 52px;
+        }
+      }
     }
   }
 }
-

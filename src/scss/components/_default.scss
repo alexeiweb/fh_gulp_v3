@@ -80,6 +80,26 @@ section {
   font-family: Comfortaa, sans-serif;
   font-weight: 400;
   font-size: 50px;
+  line-height: 60px;
+  margin-bottom: 50px;
+
+  @media (max-width: 1280px) {
+    font-size: 44px;
+    line-height: 54px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 44px;
+    margin-bottom: 10px;
+  }
 }
 
 .btn-text {
