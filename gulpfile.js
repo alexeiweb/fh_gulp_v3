@@ -6,11 +6,13 @@ import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlmin from 'gulp-htmlmin';
 import cleanCss from 'gulp-clean-css';
+import terser from 'gulp-terser';
 import gulpImg from 'gulp-image';
 import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import { stream as critical } from 'critical';
 import gulpif from 'gulp-if';
+import autoprefixer from 'gulp-autoprefixer';
 
   const del = deleteAsync;
 
@@ -36,6 +38,7 @@ export const style = () => {
     return gulp
     .src('src/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError)) // Чтобы ошибки отображались при сборке
+    .pipe(autoprefixer())
     .pipe(cleanCss({
       2: {
         specialComments: 0,
@@ -50,6 +53,7 @@ export const style = () => {
   .pipe(gulpCssimport({
     extensions: ['css'],
   }))
+  .pipe(autoprefixer())
   .pipe(cleanCss({
     2: {
       specialComments: 0,
@@ -61,6 +65,7 @@ export const style = () => {
 
 export const js = () => gulp
   .src('src/js/**/*.js')
+  .pipe(terser())
   .pipe(gulp.dest('dist/js'))
   .pipe(browserSync.stream());
 

@@ -1,0 +1,127 @@
+.contacts {
+  max-width: 780px;
+  background-color: $bg-color;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 0px;
+  border-radius: 20px;
+
+  &__title {
+    font-weight: 700;  
+    font-size: 30px;
+    line-height: 40px;
+    color: $orange-color;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    & span {
+      font-weight: 500;
+      color: $orange-color;
+    }
+  }
+
+  &__item {
+    margin-bottom: 60px;
+
+    &_phone {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+      margin-right: 45px;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        margin-right: 14px;
+        background: url("../img/call.svg") no-repeat; 
+      }
+    }
+
+    &_email {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        margin-right: 14px;
+        background: url("../img/mail.svg") no-repeat;
+      }
+    }
+  }
+  
+  &__form {
+    font-size: 12px;
+    line-height: 14px;
+
+    &_phone {
+      display: inline-block;
+      text-align: left;
+      margin-right: 20px;
+    }
+
+    &_email {
+      display: inline-block;
+      text-align: left;
+    }
+
+    &_send {
+      display: block;
+      margin-top: 34px;
+      margin-left: 530px;
+    }
+  }
+
+  &__input {
+    width: 280px;
+    height: 40px;
+    border: none;  
+    transition: .3s ease-in-out;
+
+    &:hover {
+      border: 1px solid #CBCBCB;
+    }
+    
+    &:focus {
+      border: 1px solid $main-color;
+    }
+  }
+
+  &__btn {
+    &_text { 
+      text-transform: uppercase;
+      color: $orange-color;
+    }
+
+    &_image {
+      transition: .3s ease-in-out;
+
+      &:hover {
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+      }
+
+      &:focus {
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+      }
+    }
+  }
+
+h3:before .contact__title {
+  display: none;
+}
+
+}

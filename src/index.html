@@ -17,6 +17,8 @@
       createLink('css/index.css');
     })
   </script>
+  <script defer src="libs/jquery-3.6.1.min.js"></script>
+  <script defer src="js/script.js"></script>
 </head>
 <body>
   <header class="header">
@@ -120,7 +122,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="about__wrapper">
           <div class="about__left">
@@ -144,7 +146,7 @@
       </div>
     </section>
 
-    <section class="project">
+    <section class="project" id="project">
       <div class="container">
         <h2 class="project__title title">Наши проекты</h2>
 
@@ -342,7 +344,7 @@
       </div>
     </section>
     
-    <section class="help">
+    <section class="help" id="help">
       <div class="container">
         <h2 class="help__title title">Как ты можешь нам помочь?</h2>
 
@@ -455,7 +457,7 @@
       </div>
     </section>
 
-    <section class="pets">
+    <section class="pets" id="pets">
       <div class="container">
         <h2 class="pets__title title">Наши питомцы</h2>
 
@@ -522,10 +524,8 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <section class="contacts">
+    <section class="contacts" id="contacts">
       <h3 class="contacts__title title">Ты можешь помочь нам!</h3>
   
       <p class="contacts__text">Хочешь забрать питомца, стать волонтером, или опекуном?<br><span>Свяжись с нами!</span></p>
@@ -562,26 +562,47 @@
         </label>
       </form>    
     </section>
+  </main>
+
+  <footer class="footer">
+    
   </footer>  
   
+
+  <div class="burger__menu" >
+    <ul class="burger__menu_list">
+      <li class="burger__menu_item">
+        <a href="#about" class="burger__menu_link">О приюте</a>
+      </li>
+
+      <hr class="burger__hr">
+
+      <li class="burger__menu_item">
+        <a href="#project" class="burger__menu_link">Наши проекты</a>
+      </li>
+
+      <hr class="burger__hr">
+
+      <li class="burger__menu_item">
+        <a href="#help" class="burger__menu_link">Как ты можешь помочь нам?</a>
+      </li>
+
+      <hr class="burger__hr">
+
+      <li class="burger__menu_item">
+        <a href="#pets" class="burger__menu_link">Наши питомцы</a>
+      </li>
+
+      <hr class="burger__hr">
+
+      <li class="burger__menu_item">
+        <a href="#contacts" class="burger__menu_link">Контакты</a>
+      </li>
+    </ul>
+  </div>
+
   <div class="overlay">
-    <div class="burger__menu" hidden>
-      <ul class="burger__menu_list">
-        <li class="burger__menu_item">О приюте</li>
-        <hr class="burger__hr">
-
-        <li class="burger__menu_item">Наши проекты</li>
-        <hr class="burger__hr">
-
-        <li class="burger__menu_item">Как ты можешь помочь нам?</li>
-        <hr class="burger__hr">
-
-        <li class="burger__menu_item">Наши питомцы</li>
-        <hr class="burger__hr">
-
-        <li class="burger__menu_item">Контакты</li>
-      </ul>
-    </div>
+    
 
     <div class="modal">
       <div class="modal__container">
