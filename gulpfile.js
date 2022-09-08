@@ -26,7 +26,8 @@ import babel from 'gulp-babel';
   const sass = gulpSass(sassPkg);
 
   const allJs = [
-    "src/libs/jquery-3.6.1.min.js"
+    "src/libs/jquery-3.6.1.min.js",
+    "src/libs/swiper-bundle.min.js"
   ];
 
 // Задачи
@@ -46,7 +47,7 @@ export const style = () => {
     .src('src/scss/**/*.scss')
     .pipe(gulpif(dev, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError)) // Чтобы ошибки отображались при сборке
-    .pipe(autoprefixer())
+    .pipe(gulpif(!dev, autoprefixer()))
     .pipe(cleanCss({
       2: {
         specialComments: 0,
@@ -63,7 +64,7 @@ export const style = () => {
     .pipe(gulpCssimport({
       extensions: ['css'],
     }))
-    .pipe(autoprefixer())
+    .pipe(gulpif(!dev, autoprefixer()))
     .pipe(cleanCss({
       2: {
         specialComments: 0,
