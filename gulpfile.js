@@ -7,6 +7,8 @@ import {deleteAsync} from 'del';
 import htmlmin from 'gulp-htmlmin';
 import cleanCss from 'gulp-clean-css';
 import terser from 'gulp-terser';
+import concat from 'gulp-concat';
+import sourcemaps from 'gulp-sourcemaps';
 import gulpImg from 'gulp-image';
 import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
@@ -21,6 +23,10 @@ import autoprefixer from 'gulp-autoprefixer';
   let prod = true;
 
   const sass = gulpSass(sassPkg);
+
+  const allJs = [
+    "src/libs/jquery-3.6.1.min.js"
+  ];
 
 // Задачи
 
@@ -37,6 +43,7 @@ export const style = () => {
   if (prepros) {
     return gulp
     .src('src/scss/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError)) // Чтобы ошибки отображались при сборке
     .pipe(autoprefixer())
     .pipe(cleanCss({
@@ -44,28 +51,34 @@ export const style = () => {
         specialComments: 0,
       }
     }))
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
   }
 
   return gulp
-  .src('src/css/index.css')
-  .pipe(gulpCssimport({
-    extensions: ['css'],
-  }))
-  .pipe(autoprefixer())
-  .pipe(cleanCss({
-    2: {
-      specialComments: 0,
-    }
-  }))
-  .pipe(gulp.dest('dist/css'))
-  .pipe(browserSync.stream());
-}
+    .src('src/css/index.css')
+    .pipe(sourcemaps.init())
+    .pipe(gulpCssimport({
+      extensions: ['css'],
+    }))
+    .pipe(autoprefixer())
+    .pipe(cleanCss({
+      2: {
+        specialComments: 0,
+      }
+    }))
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
+  }
 
 export const js = () => gulp
-  .src('src/js/**/*.js')
+  .src([...allJs, 'src/js/**/*.js'])
+  .pipe(sourcemaps.init())
   .pipe(terser())
+  .pipe(concat('index.min.js'))
+  .pipe(sourcemaps.write('../maps'))
   .pipe(gulp.dest('dist/js'))
   .pipe(browserSync.stream());
 
@@ -113,8 +126,7 @@ export const critCss = () => gulp
 
 export const copy = () => gulp
   .src([
-    'src/fonts/**/*',
-    'src/libs/**/*'
+    'src/fonts/**/*'
   ], {
     base: 'src'
   })
@@ -138,8 +150,7 @@ export const server = () => {
   gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
   gulp.watch('./src/js/**/*.js', js);
   gulp.watch([ 
-    './src/fonts/**/*',
-    './src/libs/**/*'
+    './src/fonts/**/*'
   ], copy);
   gulp.watch('src/img/**/*.{jpg,jpeg,png}', webp);
   gulp.watch('src/img/**/*.{jpg,jpeg,png}', avif);

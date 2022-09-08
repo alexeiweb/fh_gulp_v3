@@ -26,7 +26,6 @@ overlay.addEventListener('click', (event) => {
   }  
 });
 
-
 /* Закрытие модального окна при клике вне его контентной области */
 
 modal.click(function (event) {    
@@ -56,4 +55,27 @@ modalForm.submit(function (event) {
       modalTitle.text('Косячок')
     }
   })
+});
+
+
+/* Burger */
+
+const burger = document.querySelector('.header__burger');
+const popup = document.querySelector('.popup');
+const headerNav = document.querySelector('.burger__menu');
+const navItem = document.querySelector('.burger__menu_item');
+
+burger.addEventListener('click', () => {
+  popup.classList.add('active');
+  headerNav.classList.add('active');
+});
+
+navItem.addEventListener('click', () => {
+  //popup.classList.remove('active');
+  //headerNav.classList.remove('active');
+});
+
+$('.burger__menu_item a').on('click', function(){
+  $('.burger__menu').removeClass('active');
+  $('.popup').removeClass('active');
 });
