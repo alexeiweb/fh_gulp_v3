@@ -15,12 +15,13 @@ import gulpAvif from 'gulp-avif';
 import { stream as critical } from 'critical';
 import gulpif from 'gulp-if';
 import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
 
   const del = deleteAsync;
 
   const prepros = true;
 
-  let prod = true;
+  let dev = false;
 
   const sass = gulpSass(sassPkg);
 
@@ -43,7 +44,7 @@ export const style = () => {
   if (prepros) {
     return gulp
     .src('src/scss/**/*.scss')
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(dev, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError)) // Чтобы ошибки отображались при сборке
     .pipe(autoprefixer())
     .pipe(cleanCss({
@@ -51,14 +52,14 @@ export const style = () => {
         specialComments: 0,
       }
     }))
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulpif(dev, sourcemaps.write('../maps')))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
   }
 
   return gulp
     .src('src/css/index.css')
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(dev, sourcemaps.write('../maps')))
     .pipe(gulpCssimport({
       extensions: ['css'],
     }))
@@ -68,23 +69,27 @@ export const style = () => {
         specialComments: 0,
       }
     }))
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulpif(dev, sourcemaps.write('../maps')))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
   }
 
 export const js = () => gulp
   .src([...allJs, 'src/js/**/*.js'])
-  .pipe(sourcemaps.init())
+  .pipe(gulpif(dev, sourcemaps.write('../maps')))
+  .pipe(babel({
+    presets: ['@babel/preset-env'],
+    ignore: [...allJs, 'src/js/**/*.min.js']
+  }))
   .pipe(terser())
   .pipe(concat('index.min.js'))
-  .pipe(sourcemaps.write('../maps'))
+  .pipe(gulpif(dev, sourcemaps.write('../maps')))
   .pipe(gulp.dest('dist/js'))
   .pipe(browserSync.stream());
 
 export const img = () => gulp
   .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
-  .pipe(gulpImg({
+  .pipe(gulpif(!dev, gulpImg({
     optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
     pngquant: ['--speed=1', '--force', 256],
     zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
@@ -92,7 +97,7 @@ export const img = () => gulp
     mozjpeg: ['-optimize', '-progressive'],
     gifsicle: ['--optimize'],
     svgo: true,
-  }))
+  })))
   .pipe(gulp.dest('dist/img'))
   .pipe(browserSync.stream());
 
@@ -162,8 +167,8 @@ export const clear = () => del('dist/**/*', {forse: true,});
 // запуск
 
 export const develop = async() => {
-  prod = false;
-}
+  dev = true;
+};
 
 export const base = gulp.parallel(html, style, js, img, avif, webp, copy);
 
