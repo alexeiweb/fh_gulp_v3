@@ -74,3 +74,15 @@ $('.burger__menu_item a').on('click', function(){
   $('.burger__menu').removeClass('active');
   $('.popup').removeClass('active');
 });
+
+
+/* Slider */
+
+new Swiper(".swiper", {
+  loop: true,
+
+  navigation: {
+    nextEl: ".feedback__arrow_right",
+    prevEl: ".feedback__arrow_left",
+  }
+});
