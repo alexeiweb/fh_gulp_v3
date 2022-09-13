@@ -17,7 +17,7 @@
       createLink('css/index.css');
     })
   </script>
-  <script defer src="js/index.min.js"></script>
+  <!-- <script defer src="src/js/script.js"></script> -->
 </head>
 <body>
   <header class="header">
@@ -31,11 +31,15 @@
           </svg>
         </button>
         
-        <picture>
-          <source srcset="img/logo.avif" type="image/avif">
-          <source srcset="img/logo.webp" type="image/webp">
-          <img src="img/logo.png" class="header__logo" alt="Логотип приюта для животных Friendly House" width="356" height="72">
-        </picture>
+        <div class="header__logo logo">
+          <picture>
+            <source srcset="img/logo.avif" type="image/avif">
+            <source srcset="img/logo.webp" type="image/webp">
+            <img src="img/logo.png" class="header__logo_image" alt="Логотип приюта для животных Friendly House" width="356" height="72">
+          </picture>
+
+          <p class="header__logo_text logo-text">приют для животных</p>
+        </div>
 
         <a class="header__phone" href="tel:88493003957" >8 (849) 300 - 39 - 57</a>
       </nav>
@@ -558,46 +562,119 @@
     </section>
 
     <section class="contacts" id="contacts">
-      <h3 class="contacts__title title">Ты можешь помочь нам!</h3>
+      <div class="container contacts__container">
+        <h3 class="contacts__title title">Ты можешь помочь нам!</h3>
   
-      <p class="contacts__text">Хочешь забрать питомца, стать волонтером, или опекуном?<br><span>Свяжись с нами!</span></p>
-  
-      <div class="contacts__item">
-        <a class="contacts__item_phone" href="tel:88493003957">8 (849) 300 - 39 - 57</a>
-  
-        <a class="contacts__item_email" href="mailto:FriendlyHouse@gmail.com">FriendlyHouse@gmail.com</a>
-      </div>
-  
-      <p class="contacts__text">Или оставь свои контакты и мы сами свяжемся с тобой!</p>
-  
-      <form action="#" class="contacts__form">
-        <label class="contacts__form_phone">
-          Номер телефона<br>
-          <input class="contacts__input" type="tel" name="phone">
-        </label>
-  
-        <label class="contacts__form_email">
-          E-mail<br>
-          <input class="contacts__input" type="email" name="email">
-        </label>
-  
-        <label class="contacts__form_send">
-          <button class="contacts__form_btn" type="submit">
-            <picture>
-              <source srcset="img/footer_btn.avif" type="image/avif">
-              <source srcset="img/footer_btn.webp" type="image/webp">
-              <img src="img/footer_btn.png" alt="" class="contacts__btn_image" width="73" height="71">
-            </picture>
-  
-            <p class="contacts__btn_text">Отправить</p>
-          </button>
-        </label>
-      </form>    
+        <p class="contacts__text">Хочешь забрать питомца, стать волонтером, или опекуном?<br><span>Свяжись с нами!</span></p>
+    
+        <div class="contacts__item">
+          <a class="contacts__item_phone" href="tel:88493003957">8 (849) 300 - 39 - 57</a>
+    
+          <a class="contacts__item_email" href="mailto:FriendlyHouse@gmail.com">FriendlyHouse@gmail.com</a>
+        </div>
+    
+        <p class="contacts__text">Или оставь свои контакты и мы сами свяжемся с тобой!</p>
+    
+        <form action="#" class="contacts__form">
+          <label class="contacts__form_phone">
+            Номер телефона<br>
+            <input class="contacts__input" type="tel" name="phone">
+          </label>
+    
+          <label class="contacts__form_email">
+            E-mail<br>
+            <input class="contacts__input" type="email" name="email">
+          </label>
+    
+          <label class="contacts__form_send">
+            <button class="contacts__form_btn" type="submit">
+              <picture>
+                <source srcset="img/footer_btn.avif" type="image/avif">
+                <source srcset="img/footer_btn.webp" type="image/webp">
+                <img src="img/footer_btn.png" alt="" class="contacts__btn_image" width="73" height="71">
+              </picture>
+    
+              <p class="contacts__btn_text">Отправить</p>
+            </button>
+          </label>
+        </form>
+      </div> 
     </section>
   </main>
 
   <footer class="footer">
-    
+    <div class="container">
+      <div class="footer__location">
+        <div class="footer__map" id="map" style="width: 680px; height: 360px"></div>
+
+        <div class="footer__contacts">
+          <p class="footer__logo"><span>Friendly House</span></p>
+          
+          <p class="footer__logo_text logo-text">приют для животных</p>
+
+          <address class="footer__address">103929, Москва, Пятницкое шоссе, дом 28</address>
+          
+          <a class="footer__phone" href="tel:88493003957">8 (849) 300 - 39 - 57</a>
+      
+          <a class="footer__email" href="mailto:FriendlyHouse@gmail.com">FriendlyHouse@gmail.com</a>           
+        </div>
+      </div>
+
+      <div class="footer__property">
+        <div class="footer__logo logo">
+          <picture>
+            <source srcset="img/logo-white.avif" type="image/avif">
+            <source srcset="img/logo-white.webp" type="image/webp">
+            <img src="img/logo-white.png" class="footer__logo_image" alt="Логотип приюта для животных Friendly House" width="356" height="72">
+          </picture>
+
+          <p class="footer__logo_text logo-text">приют для животных Friendly House® 2011-2021</p>
+        </div>
+
+        <div class="footer__add">
+          <ul class="footer__social">
+            <li class="footer__item">
+              <a href="https://vk.com" class="footer__link" target="_blank">
+                <svg viewbox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 .8C9.396.8.8 9.396.8 20S9.396 39.2 20 39.2 39.2 30.604 39.2 20 30.604.8 20 .8Zm7.384 21.662s1.698 1.676 2.116 2.454c.012.016.018.032.022.04.17.286.21.508.126.674-.14.276-.62.412-.784.424h-3c-.208 0-.644-.054-1.172-.418-.406-.284-.806-.75-1.196-1.204-.582-.676-1.086-1.26-1.594-1.26a.61.61 0 0 0-.19.03c-.384.124-.876.672-.876 2.132 0 .456-.36.718-.614.718h-1.374c-.468 0-2.906-.164-5.066-2.442-2.644-2.79-5.024-8.386-5.044-8.438-.15-.362.16-.556.498-.556h3.03c.404 0 .536.246.628.464.108.254.504 1.264 1.154 2.4 1.054 1.852 1.7 2.604 2.218 2.604a.599.599 0 0 0 .278-.072c.676-.376.55-2.786.52-3.286 0-.094-.002-1.078-.348-1.55-.248-.342-.67-.472-.926-.52a1.1 1.1 0 0 1 .398-.338c.464-.232 1.3-.266 2.13-.266h.462c.9.012 1.132.07 1.458.152.66.158.674.584.616 2.042-.018.414-.036.882-.036 1.434 0 .12-.006.248-.006.384-.02.742-.044 1.584.48 1.93a.432.432 0 0 0 .228.066c.182 0 .73 0 2.214-2.546.458-.82.855-1.671 1.19-2.548.03-.052.118-.212.222-.274a.532.532 0 0 1 .248-.058h3.562c.388 0 .654.058.704.208.088.238-.016.964-1.642 3.166l-.726.958c-1.474 1.932-1.474 2.03.092 3.496Z"/>
+                </svg>
+              </a>
+            </li>
+  
+            <li class="footer__item">
+              <a href="https://telegram.org" class="footer__link" target="_blank">
+                <svg viewbox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M38.4 19.2a19.2 19.2 0 1 1-38.4 0 19.2 19.2 0 0 1 38.4 0Zm-18.511-5.026c-1.868.778-5.602 2.386-11.199 4.824-.907.36-1.385.716-1.428 1.061-.072.583.66.814 1.656 1.128l.42.132c.98.32 2.3.691 2.983.706.624.014 1.318-.24 2.084-.768 5.23-3.53 7.93-5.314 8.097-5.352.12-.029.288-.063.399.038.112.099.1.288.088.339-.072.31-2.944 2.978-4.43 4.36-.463.432-.792.737-.86.807-.147.151-.298.3-.45.446-.912.879-1.594 1.536.036 2.611.784.519 1.413.944 2.04 1.37.681.466 1.363.93 2.246 1.51.223.144.44.3.648.45.794.566 1.512 1.074 2.393.993.513-.048 1.044-.528 1.313-1.968.636-3.401 1.886-10.767 2.174-13.803a3.415 3.415 0 0 0-.031-.756.808.808 0 0 0-.274-.52 1.263 1.263 0 0 0-.744-.224c-.72.012-1.831.399-7.161 2.616Z"/>
+                </svg>
+              </a>
+            </li>
+  
+            <li class="footer__item">
+              <a href="https://ru.pinterest.com" class="footer__link" target="_blank">
+                <svg viewbox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 0C8.956 0 0 8.955 0 20c0 8.19 4.924 15.225 11.972 18.319-.057-1.397-.011-3.074.348-4.592l2.573-10.898s-.639-1.277-.639-3.164c0-2.964 1.718-5.179 3.857-5.179 1.819 0 2.698 1.366 2.698 3.003 0 1.828-1.166 4.562-1.766 7.097-.502 2.123 1.064 3.853 3.157 3.853 3.79 0 6.34-4.867 6.34-10.634 0-4.382-2.95-7.663-8.32-7.663-6.068 0-9.847 4.524-9.847 9.577 0 1.744.514 2.972 1.319 3.922.37.438.42.613.287 1.116-.096.368-.317 1.253-.407 1.604-.133.507-.543.688-1.002.501-2.794-1.141-4.096-4.201-4.096-7.641 0-5.682 4.791-12.494 14.294-12.494 7.636 0 12.662 5.526 12.662 11.459 0 7.844-4.362 13.706-10.792 13.706-2.158 0-4.19-1.168-4.885-2.493 0 0-1.161 4.607-1.407 5.498-.424 1.543-1.254 3.084-2.013 4.285 1.84.544 3.749.82 5.668.82C31.045 40.001 40 31.046 40 20 40 8.955 31.045 0 20 0Z"/>
+                </svg>
+              </a>
+            </li>  
+            
+            <li class="footer__item">
+              <a href="#" class="footer__link" target="_blank">
+                <svg viewbox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M35.795 7.735A19.9 19.9 0 0 1 40 20c0 11.044-8.956 20-20 20-7.77 0-14.507-4.434-17.818-10.908h8.717c4.154 0 7.055-2.24 7.055-5.818 0-7.585-8.75-4.495-8.75-7.187 0-1.297 1.04-1.769 2.945-1.769h6.066c1.682 0 3.66.302 3.66 2.137v6.044c0 4.377 3.418 6.592 6.96 6.592 3.603 0 6.96-2.215 6.96-6.592V7.735Z"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M20 0a19.906 19.906 0 0 1 11.25 3.465V22.64a2.423 2.423 0 0 1-2.414 2.417 2.423 2.423 0 0 1-2.415-2.417v-5.746c0-4.587-2.322-6.495-5.345-6.495h-9.84c-3.563 0-6.519 2.267-6.519 5.863 0 1.84.788 4.536 4.516 5.205 3.037.547 4.235.388 4.235 2.012 0 1.578-1.767 1.578-4.1 1.578H.647A19.969 19.969 0 0 1 0 20C0 8.958 8.957 0 20 0Z"/>
+                </svg>
+              </a>
+            </li>          
+          </ul>
+  
+          <div class="footer__author">
+            <p>Design by Anastasia Ilina</p>
+  
+            <a class="footer__author_email" href="mailto:ilina9825@gmail.com">ilina9825@gmail.com</a>          
+          </div>
+        </div>
+      </div>
+    </div>    
   </footer> 
 
   <div class="overlay">  

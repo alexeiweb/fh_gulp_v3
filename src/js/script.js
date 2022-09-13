@@ -1,3 +1,4 @@
+alert('Hello');
 /* Код для активации focus в браузере Safari */
 
 document.addEventListener('click', event => {
@@ -86,3 +87,21 @@ new Swiper(".swiper", {
     prevEl: ".feedback__arrow_left",
   }
 });
+
+
+/* Яндекс-карты */
+
+ymaps.ready(init);
+  function init() {
+    const kremMap = new ymaps.Map("map", {
+      center: [55.723151, 37.565021],
+      zoom: 15
+    });
+
+    const marker = new ymaps.Placemark([55.723151, 37.565021], {
+      hintContent: 'улица Усачёва'
+    });
+
+      kremMap.geoObjects.add(marker);
+  };
+
