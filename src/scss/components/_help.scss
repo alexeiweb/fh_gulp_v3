@@ -42,6 +42,28 @@
     @media (max-width: 1023px) {
       flex-direction: column;
     }
+
+    &_title {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+      text-align: left;
+
+      @media (max-width: 1280px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      
+      @media (max-width: 1023px) {
+        margin-bottom: 0;
+      }
+      
+      @media (max-width: 767px) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
     
     &_left {
       max-width: 480px;
@@ -76,70 +98,70 @@
       }
 
       & .image-one {
-      @media (max-width: 1023px) {
-        width: 300px;
-        height: 162px;
-        object-fit: cover;
+        @media (max-width: 1023px) {
+          width: 300px;
+          height: 162px;
+          object-fit: cover;
+        }
+
+        @media (max-width: 767px) {
+          width: 200px;
+          height: 131px;
+        }
       }
 
-      @media (max-width: 767px) {
-        width: 200px;
-        height: 131px;
+      & .image-two {
+        @media (max-width: 1023px) {
+          width: 300px;
+          height: 209px;
+        }
+
+        @media (max-width: 767px) {
+          width: 170px;
+          height: 131px;
+        }
       }
 
-    }
-    & .image-two {
-      @media (max-width: 1023px) {
-        width: 300px;
-        height: 209px;
-      }
+      & .image-three {
+        grid-row: 1 / 3;
+        object-fit: cover;      
 
-      @media (max-width: 767px) {
-        width: 170px;
-        height: 131px;
-      }
-    }
+        @media (max-width: 1280px) {
+          height: 298px;
+        }
 
-    & .image-three {
-      grid-row: 1 / 3;
-      object-fit: cover;      
+        @media (max-width: 1023px) {
+          width: 380px;
+          height: 391px;
+          object-fit: cover;
+        }
+        
+        @media (max-width: 767px) {
+          width: 193px;
+          height: 131px;
+        }
+      }    
 
-      @media (max-width: 1280px) {
-        height: 298px;
-      }
+      &_title {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 20px;
 
-      @media (max-width: 1023px) {
-        width: 380px;
-        height: 391px;
-        object-fit: cover;
-      }
-      
-      @media (max-width: 767px) {
-        width: 193px;
-        height: 131px;
-      }
-    }    
+        @media (max-width: 1280px) {
+          font-size: 24px;
+          line-height: 30px;
+        }
 
-    &_title {
-      font-weight: 500;
-      font-size: 30px;
-      line-height: 40px;
-      margin-bottom: 20px;
+        @media (max-width: 1023px) {
+          margin-bottom: 0;
+        }
 
-      @media (max-width: 1280px) {
-        font-size: 24px;
-        line-height: 30px;
+        @media (max-width: 767px) {
+          font-size: 18px;
+          line-height: 24px;
+        }
       }
-
-      @media (max-width: 1023px) {
-        margin-bottom: 0;
-      }
-
-      @media (max-width: 767px) {
-        font-size: 18px;
-        line-height: 24px;
-      }
-    }    
     }
   }
   
@@ -243,7 +265,6 @@
       }
 
       & .help__desc {
-
         @media (max-width: 1023px) {
           max-width: 700px;
           width: 100%;
@@ -269,16 +290,58 @@
     }
 
     &_right {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 280px);
+      grid-template-rows: repeat(2, 181px);
       gap: 20px;
       padding-top: 30px;
       margin-bottom: 45px;
-    }
+      grid-template-areas: 
+        "five six"
+        "five seven";
 
-    &_add {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      @media (max-width: 1280px) {
+        grid-template-columns: repeat(2, 180px);
+        grid-template-rows: repeat(2, 117px);
+      }
+
+      @media (max-width: 1023px) {
+        grid-template-columns: 300px 380px;
+        grid-template-rows: 230px 241px;
+      }
+
+      & .image-five {
+        grid-area: five;
+
+        & .five {
+          width: 280px;
+          height: 382px;
+          object-fit: cover;
+
+          @media (max-width: 1280px) {
+            width: 180px;
+            height: 244px;
+          }
+
+          @media (max-width: 1023px) {
+            width: 300px;
+            height: 491px;
+          }
+
+          @media (max-width: 767px) {
+            width: 130px;
+            height: 160px;
+          }
+        }
+      }
+
+      & .image-six {
+        grid-area: six;
+      }
+
+      & .image-seven {
+        grid-area: seven;
+      }
     }
   }
   
@@ -291,29 +354,58 @@
     }
   }
 
-.title-before {
-  &:before {  
-    font-family: 'Comfortaa';
-    font-weight: 400;
-    font-size: 50px;
-    counter-increment: my-count;
-    content: counter(my-count);
-    color: $orange-color;
-    margin-right: 20px;
-    background-color: #fff;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 9px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  .title-before {
+    &:before {  
+      font-family: 'Comfortaa';
+      font-weight: 400;
+      font-size: 50px;
+      counter-increment: my-count;
+      content: counter(my-count);
+      color: $orange-color;
+      margin-right: 20px;
+      background-color: #fff;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      padding-top: 23px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
 
-    @media (max-width: 1023px) {
-      width: 60px;
-      height: 60px;
-      font-size: 34px;
-    }
-  }  
+      @media (max-width: 1023px) {
+        width: 60px;
+        height: 60px;
+        font-size: 34px;
+        padding-top: 18px;
+      }
+    }  
+  }
 }
+
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+  "elem1 elem2"
+  "elem1 elem3";
+}
+
+.element {
+  background-color: aquamarine;
+  width: 300px;
+}
+
+.elem1 {
+  grid-area: elem1;
+}
+
+.elem2 {
+  grid-area: elem2;
+}
+
+.elem3 {
+  grid-area: elem3;
 }
