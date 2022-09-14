@@ -310,6 +310,16 @@
         grid-template-rows: 230px 241px;
       }
 
+      @media (max-width: 767px) {        
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 160px;
+        grid-template-areas: 
+        "five"
+        "six"
+        "seven";
+      }
+
       & .image-five {
         grid-area: five;
 
@@ -337,10 +347,34 @@
 
       & .image-six {
         grid-area: six;
+
+        & .six {
+          @media (max-width: 1023px) {
+            width: 380px;
+            height: 230px;
+          }
+
+          @media (max-width: 767px) {
+            width: 225px;
+            height: 160px;
+          }
+        }
       }
 
       & .image-seven {
         grid-area: seven;
+
+        & .seven {
+          @media (max-width: 1023px) {
+            width: 380px;
+            height: 241px;
+          }
+
+          @media (max-width: 767px) {
+            width: 218px;
+            height: 160px;
+          }
+        }
       }
     }
   }
