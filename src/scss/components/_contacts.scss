@@ -1,40 +1,44 @@
 .contacts {
   max-width: 780px;
-  background-color: $bg-color;
-  text-align: center;
-  margin: 0 auto;
-  padding: 50px 0px;
-  border-radius: 20px;
-  margin-bottom: 140px;
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  white-space: normal;
+  
+  &__container {
+    position: relative;
+    padding: 50px 100px;
+    background-color: $bg-color;
+    border-radius: 20px;
+  }
 
   &__title {
     font-weight: 700;  
     font-size: 30px;
     line-height: 40px;
+    text-align: center;
     color: $orange-color;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
   }
 
   &__text {
     margin-bottom: 20px;
+    text-align: center;
+  }
 
-    & span {
-      font-weight: 500;
-      color: $orange-color;
-    }
+  &__subtitle span {
+    font-weight: 500;
+    color: $orange-color;
   }
 
   &__item {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    font-weight: 500;
     margin-bottom: 60px;
 
     &_phone {
-      display: inline-block;
-      vertical-align: middle;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 30px;
-      margin-right: 45px;
-
       &:before {
         content: "";
         display: inline-block;
@@ -42,17 +46,11 @@
         width: 24px;
         height: 24px;
         margin-right: 14px;
-        background: url("../img/call.svg") no-repeat; 
+        background: url("../img/call.svg") no-repeat;
       }
     }
 
     &_email {
-      display: inline-block;
-      vertical-align: middle;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 30px;
-
       &:before {
         content: "";
         display: inline-block;
@@ -87,11 +85,29 @@
     }
   }
 
-  &__input {
+  &__data {
+    display: flex;  
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-bottom: 40px;
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  &__input {  
+    display: block;
     width: 280px;
     height: 40px;
-    border: none;  
-    transition: .3s ease-in-out;
+    font-size: 18px;
+    line-height: 16px;
+    padding-left: 25px;
+    padding-right: 15px;
+    border: none;
 
     &:hover {
       border: 1px solid #CBCBCB;
@@ -102,12 +118,14 @@
     }
   }
 
-  &__btn {
-    &_text { 
-      text-transform: uppercase;
-      color: $orange-color;
+  &__form {
+    &_btn {
+      display: block;
+      margin-left: auto;
     }
+  }
 
+  &__btn {
     &_image {
       transition: .3s ease-in-out;
 
@@ -119,9 +137,20 @@
         filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
       }
     }
+
+    &_text {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $orange-color;
+      transition: .3s ease-in-out;
+  
+      &:hover {
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+      }
+    }
   }
 
-h3:before .contact__title {
-  display: none;
-}
+  h3:before .contact__title {
+    display: none;
+  }
 }

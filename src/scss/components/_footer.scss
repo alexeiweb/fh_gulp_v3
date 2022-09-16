@@ -6,10 +6,12 @@
   &__location {
     display: flex;
     justify-content: space-between;
+    gap: 120px;
+    margin-bottom: 87px;
   }
 
-  &__logo {    
-    & span {
+  &__contacts {    
+    &_title {
       font-family: Comfortaa;
       font-size: 40px;
     }
@@ -57,8 +59,11 @@
   }
 
   &__property {
-    display: flex;
-    justify-content: space-between;    
+    display: flex;        
+  }
+
+  &__logo {
+    margin-right: 240px;
   }
 
   &__add {
@@ -71,7 +76,7 @@
     display: flex;
     gap: 40px;
     padding: 0;
-    margin: 0;    
+    margin: 0;
   }
 
   &__link {

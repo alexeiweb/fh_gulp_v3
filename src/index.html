@@ -17,7 +17,9 @@
       createLink('css/index.css');
     })
   </script>
-  <!-- <script defer src="src/js/script.js"></script> -->
+
+  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=cc0e32e4-b5fd-4f9c-ac1a-c006f40f1428&lang=ru_RU" type="text/javascript"></script>
+  <script defer src="./js/script.js"></script>
 </head>
 <body>
   <header class="header">
@@ -87,74 +89,116 @@
           <div class="hero__block">
             <h1 class="hero__title title"><span>Сара ждёт,</span> когда найдётся её человек</h1>
 
-          <label>
-            <button class="hero__btn" type="submit">
-              <picture>
-                <source srcset="img/hero_btn.avif" type="image/avif">
-                <source srcset="img/hero_btn.webp" type="image/webp">
-                <img loading="lazy" src="img/hero_btn.png" alt="Картинка лапки" class="hero__btn_image" width="111" height="101">
-              </picture>
-                
-              <p class="hero__btn_text btn-text">Жми на лапку, чтобы помочь!</p>
-            </button>
-          </label>
+            <label>
+              <button class="hero__btn" type="submit">
+                <picture>
+                  <source srcset="img/hero_btn.avif" type="image/avif">
+                  <source srcset="img/hero_btn.webp" type="image/webp">
+                  <img loading="lazy" src="img/hero_btn.png" alt="Картинка лапки" class="hero__btn_image" width="111" height="101">
+                </picture>
+                  
+                <p class="hero__btn_text btn-text">Жми на лапку, чтобы помочь!</p>
+              </button>
+            </label>
           </div>
 
-          <picture>
-            <source srcset="img/sara.avif" type="image/avif">
-            <source srcset="img/sara.webp" type="image/webp">
-            <img loading="lazy" src="img/sara.jpg" alt="Фотография Сары" class="hero__image" width="500" height="500">
-          </picture>          
+          <div class="hero__pic_slider swiper">
+            <div class="hero__pic swiper-wrapper">
+              <picture class="swiper-slide">
+                <source srcset="img/sara.avif" type="image/avif">
+                <source srcset="img/sara.webp" type="image/webp">
+                <img loading="lazy" src="img/sara.png" alt="Фотография Сары" class="hero__image" width="500" height="500">
+              </picture>
+
+              <picture class="swiper-slide">
+                <source srcset="img/boris.avif" type="image/avif">
+                <source srcset="img/boris.webp" type="image/webp">
+                <img loading="lazy" src="img/boris.png" alt="Фотография Бориса" class="hero__image" width="500" height="500">
+              </picture>
+
+              <picture class="swiper-slide">
+                <source srcset="img/lui.avif" type="image/avif">
+                <source srcset="img/lui.webp" type="image/webp">
+                <img loading="lazy" src="img/lui.png" alt="Фотография Бориса" class="hero__image" width="500" height="500">
+              </picture>
+
+              <picture class="swiper-slide">
+                <source srcset="img/piter.avif" type="image/avif">
+                <source srcset="img/piter.webp" type="image/webp">
+                <img loading="lazy" src="img/piter.png" alt="Фотография Бориса" class="hero__image" width="500" height="500">
+              </picture>
+
+              <picture class="swiper-slide">
+                <source srcset="img/kenny.avif" type="image/avif">
+                <source srcset="img/kenny.webp" type="image/webp">
+                <img loading="lazy" src="img/kenny.png" alt="Фотография Бориса" class="hero__image" width="500" height="500">
+              </picture>
+            </div>
+          </div>
   
-          <ul class="hero__list">
-            <li class="hero__item">
-              <figure>
-                <picture>
-                  <source srcset="img/hero-item1.avif" type="image/avif">
-                  <source srcset="img/hero-item1.webp" type="image/webp">
-                  <img loading="lazy" src="img/hero-item1.png" alt="Фотография Бориса" width="80" height="80">
-                </picture>               
-              </figure>
+          <div class="hero__items swiper">
+            <ul class="hero__list swiper-wrapper">
+              <li class="hero__item swiper-slide">
+                <figure>
+                  <picture class="swiper-slide">
+                    <source srcset="img/boris.avif" type="image/avif">
+                    <source srcset="img/boris.webp" type="image/webp">
+                    <img loading="lazy" src="img/boris.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
+                  </picture>           
+                </figure>
+  
+                <figcaption>Борис</figcaption>
+              </li>
+  
+              <li class="hero__item swiper-slide">
+                <figure>
+                  <picture class="swiper-slide">
+                    <source srcset="img/lui.avif" type="image/avif">
+                    <source srcset="img/lui.webp" type="image/webp">
+                    <img loading="lazy" src="img/lui.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
+                  </picture>               
+                </figure>
+  
+                <figcaption>Луи</figcaption>
+              </li>
+  
+              <li class="hero__item swiper-slide">
+                <figure>
+                  <picture class="swiper-slide">
+                    <source srcset="img/piter.avif" type="image/avif">
+                    <source srcset="img/piter.webp" type="image/webp">
+                    <img loading="lazy" src="img/piter.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
+                  </picture>             
+                </figure>
+  
+                <figcaption>Питер</figcaption>
+              </li>
+  
+              <li class="hero__item swiper-slide">
+                <figure>
+                  <picture class="swiper-slide">
+                    <source srcset="img/kenny.avif" type="image/avif">
+                    <source srcset="img/kenny.webp" type="image/webp">
+                    <img loading="lazy" src="img/kenny.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
+                  </picture>               
+                </figure>
+  
+                <figcaption>Кенни</figcaption>
+              </li>
 
-              <figcaption>Борис</figcaption>
-            </li>
-
-            <li class="hero__item">
-              <figure>
-                <picture>
-                  <source srcset="img/hero-item2.avif" type="image/avif">
-                  <source srcset="img/hero-item2.webp" type="image/webp">
-                  <img loading="lazy" src="img/hero-item2.png" alt="Фотография Луи" width="80" height="80">
-                </picture>               
-              </figure>
-
-              <figcaption>Луи</figcaption>
-            </li>
-
-            <li class="hero__item">
-              <figure>
-                <picture>
-                  <source srcset="img/hero-item3.avif" type="image/avif">
-                  <source srcset="img/hero-item3.webp" type="image/webp">
-                  <img loading="lazy" src="img/hero-item3.png" alt="Фотография Питера" width="80" height="80">
-                </picture>               
-              </figure>
-
-              <figcaption>Питер</figcaption>
-            </li>
-
-            <li class="hero__item">
-              <figure>
-                <picture>
-                  <source srcset="img/hero-item4.avif" type="image/avif">
-                  <source srcset="img/hero-item4.webp" type="image/webp">
-                  <img loading="lazy" src="img/hero-item4.png" alt="Фотография Кенни" width="80" height="80">
-                </picture>               
-              </figure>
-
-              <figcaption>Кенни</figcaption>
-            </li>
-          </ul>
+              <li class="hero__item swiper-slide">
+                <figure>
+                  <picture class="swiper-slide">
+                    <source srcset="img/sara.avif" type="image/avif">
+                    <source srcset="img/sara.webp" type="image/webp">
+                    <img loading="lazy" src="img/sara.png" alt="Фотография Сары" class="hero__image" width="80" height="80">
+                  </picture>              
+                </figure>
+  
+                <figcaption>Сара</figcaption>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -396,7 +440,7 @@
             </p>
           </div>
 
-          <div class="swiper">
+          <div class="help__financial_slider swiper">
             <div class="help__financial_right swiper-wrapper">
               <picture class="swiper-slide">
                 <source srcset="img/help1.avif" type="image/avif">
@@ -414,7 +458,7 @@
                 <source srcset="img/help2.avif" type="image/avif">
                 <source srcset="img/help2.webp" type="image/webp">
                 <img loading="lazy" src="img/help2.jpg" alt="Фотография питомца" class="help__image image-two" width="180" height="139">
-              </picture>  
+              </picture>
             </div>
           </div>
         </div>
@@ -456,7 +500,7 @@
             </p>
           </div>
 
-          <div class="swiper">
+          <div class="help__conservator_slider swiper">
             <div class="help__conservator_right swiper-wrapper">
               <picture class="image-five swiper-slide">
                 <source srcset="img/help5.avif" type="image/avif">
@@ -575,28 +619,26 @@
     
         <p class="contacts__text">Или оставь свои контакты и мы сами свяжемся с тобой!</p>
     
-        <form action="#" class="contacts__form">
-          <label class="contacts__form_phone">
-            Номер телефона<br>
-            <input class="contacts__input" type="tel" name="phone">
-          </label>
-    
-          <label class="contacts__form_email">
-            E-mail<br>
-            <input class="contacts__input" type="email" name="email">
-          </label>
-    
-          <label class="contacts__form_send">
-            <button class="contacts__form_btn" type="submit">
-              <picture>
-                <source srcset="img/footer_btn.avif" type="image/avif">
-                <source srcset="img/footer_btn.webp" type="image/webp">
-                <img src="img/footer_btn.png" alt="" class="contacts__btn_image" width="73" height="71">
-              </picture>
-    
-              <p class="contacts__btn_text">Отправить</p>
-            </button>
-          </label>
+        <form class="contacts__form">
+          <fieldset class="contacts__data">
+            <label class="contacts__label">Номер телефона
+              <input class="contacts__input" type="tel" name="phone">
+            </label>
+      
+            <label class="contacts__label">E-mail
+              <input class="contacts__input" type="email" name="email">
+            </label>
+          </fieldset>
+  
+          <button class="contacts__form_btn" type="submit">
+            <picture>
+              <source srcset="img/footer_btn.avif" type="image/avif">
+              <source srcset="img/footer_btn.webp" type="image/webp">
+              <img loading="lazy" src="img/footer_btn.png" alt="Изображение кнопки Отправить" class="modal__btn_image" width="73" height="71">
+            </picture>
+  
+            <p class="contacts__btn_text btn-text">Отправить</p>
+          </button>
         </form>
       </div> 
     </section>
@@ -608,9 +650,9 @@
         <div class="footer__map" id="map" style="width: 680px; height: 360px"></div>
 
         <div class="footer__contacts">
-          <p class="footer__logo"><span>Friendly House</span></p>
+          <h2 class="footer__contacts_title">Friendly House</h2>
           
-          <p class="footer__logo_text logo-text">приют для животных</p>
+          <p class="footer__contacts_text logo-text">приют для животных</p>
 
           <address class="footer__address">103929, Москва, Пятницкое шоссе, дом 28</address>
           

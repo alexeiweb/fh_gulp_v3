@@ -1,4 +1,3 @@
-alert('Hello');
 /* Код для активации focus в браузере Safari */
 
 document.addEventListener('click', event => {
@@ -77,14 +76,47 @@ $('.burger__menu_item a').on('click', function(){
 });
 
 
-/* Slider */
+/* Sliders */
 
-new Swiper(".swiper", {
-  loop: true,
+// const swiper = new Swiper(".hero__items", {
+//   spaceBetween: 10,
+//   slidesPerView: 4,
+//   freeMode: true,
+//   watchSlidesProgress: true,
+// });
 
-  navigation: {
-    nextEl: ".feedback__arrow_right",
-    prevEl: ".feedback__arrow_left",
+// const swiper2 = new Swiper(".hero__pic_slider", {
+//   slidesPerView: 1,
+//   loop: true,
+//   spaceBetween: 10,
+//   thumbs: {
+//     swiper: swiper,
+//   },
+// });
+
+new Swiper(".help__financial_slider", { 
+  enabled: true,
+  breakpoints: {
+    767: {
+      enabled: false,
+      spaceBetween: 10,
+      slidesPerView: 1,
+      freeMode: true,
+      watchSlidesProgress: true,
+    }
+  }
+});
+
+new Swiper(".help__conservator_slider", { 
+  enabled: true,
+  breakpoints: {
+    767: {
+      enabled: false,
+      spaceBetween: 10,
+      slidesPerView: 1,
+      freeMode: true,
+      watchSlidesProgress: true,
+    }
   }
 });
 
@@ -93,15 +125,19 @@ new Swiper(".swiper", {
 
 ymaps.ready(init);
   function init() {
-    const kremMap = new ymaps.Map("map", {
-      center: [55.723151, 37.565021],
-      zoom: 15
+    const myMap = new ymaps.Map("map", {
+      center: [55.903403, 37.259899],
+      zoom: 16
     });
 
-    const marker = new ymaps.Placemark([55.723151, 37.565021], {
-      hintContent: 'улица Усачёва'
+    const marker = new ymaps.Placemark([55.903403, 37.259899], {
+      hintContent: 'Пятницкое шоссе'
+    }, {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/marker.svg',
+      iconImageSize: [39, 59],
+      iconImageOffset: [-3, -42]
     });
 
-      kremMap.geoObjects.add(marker);
+      myMap.geoObjects.add(marker);
   };
-

@@ -83,7 +83,8 @@ export const js = () => gulp
     ignore: [...allJs, 'src/js/**/*.min.js']
   }))
   .pipe(terser())
-  .pipe(concat('index.min.js'))
+  .pipe(concat('script.js'))
+  // .pipe(concat('index.min.js'))
   .pipe(gulpif(dev, sourcemaps.write('../maps')))
   .pipe(gulp.dest('dist/js'))
   .pipe(browserSync.stream());
