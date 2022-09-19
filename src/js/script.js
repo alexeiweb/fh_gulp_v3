@@ -78,47 +78,47 @@ $('.burger__menu_item a').on('click', function(){
 
 /* Sliders */
 
-// const swiper = new Swiper(".hero__items", {
-//   spaceBetween: 10,
-//   slidesPerView: 4,
-//   freeMode: true,
-//   watchSlidesProgress: true,
-// });
-
-// const swiper2 = new Swiper(".hero__pic_slider", {
-//   slidesPerView: 1,
-//   loop: true,
-//   spaceBetween: 10,
-//   thumbs: {
-//     swiper: swiper,
-//   },
-// });
-
-new Swiper(".help__financial_slider", { 
-  enabled: true,
-  breakpoints: {
-    767: {
-      enabled: false,
-      spaceBetween: 10,
-      slidesPerView: 1,
-      freeMode: true,
-      watchSlidesProgress: true,
-    }
-  }
+const swiper = new Swiper(".hero__list", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
 });
 
-new Swiper(".help__conservator_slider", { 
-  enabled: true,
-  breakpoints: {
-    767: {
-      enabled: false,
-      spaceBetween: 10,
-      slidesPerView: 1,
-      freeMode: true,
-      watchSlidesProgress: true,
-    }
-  }
+const swiper2 = new Swiper(".hero__pic", {
+  allowTouchMove: false,
+  spaceBetween: 10,
+  thumbs: {
+    swiper: swiper,
+  },
 });
+
+// new Swiper(".help__financial_slider", { 
+//   enabled: true,
+//   breakpoints: {
+//     767: {
+//       enabled: false,
+//       spaceBetween: 10,
+//       slidesPerView: 1,
+//       freeMode: true,
+//       watchSlidesProgress: true,
+//     }
+//   }
+// });
+
+// new Swiper(".help__conservator_slider", { 
+//   enabled: true,
+//   breakpoints: {
+//     767: {
+//       enabled: false,
+//       spaceBetween: 10,
+//       slidesPerView: 1,
+//       freeMode: true,
+//       watchSlidesProgress: true,
+//     }
+//   }
+// });
 
 
 /* Яндекс-карты */

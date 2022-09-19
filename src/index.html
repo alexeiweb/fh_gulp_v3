@@ -19,7 +19,8 @@
   </script>
 
   <script defer src="https://api-maps.yandex.ru/2.1/?apikey=cc0e32e4-b5fd-4f9c-ac1a-c006f40f1428&lang=ru_RU" type="text/javascript"></script>
-  <script defer src="./js/script.js"></script>
+  
+  <script defer src="/js/script.js"></script>
 </head>
 <body>
   <header class="header">
@@ -102,8 +103,8 @@
             </label>
           </div>
 
-          <div class="hero__pic_slider swiper">
-            <div class="hero__pic swiper-wrapper">
+          <div class="swiper hero__pic">
+            <div class="swiper-wrapper">
               <picture class="swiper-slide">
                 <source srcset="img/sara.avif" type="image/avif">
                 <source srcset="img/sara.webp" type="image/webp">
@@ -135,12 +136,24 @@
               </picture>
             </div>
           </div>
-  
-          <div class="hero__items swiper">
-            <ul class="hero__list swiper-wrapper">
+
+          <div thumbsSlider="" class="swiper hero__list">
+            <ul class="swiper-wrapper">
               <li class="hero__item swiper-slide">
                 <figure>
-                  <picture class="swiper-slide">
+                  <picture>
+                    <source srcset="img/sara.avif" type="image/avif">
+                    <source srcset="img/sara.webp" type="image/webp">
+                    <img loading="lazy" src="img/sara.png" alt="Фотография Сары" class="hero__image" width="80" height="80">
+                  </picture>
+                </figure>
+  
+                <figcaption>Сара</figcaption>
+              </li>
+
+              <li class="hero__item swiper-slide">
+                <figure>
+                  <picture>
                     <source srcset="img/boris.avif" type="image/avif">
                     <source srcset="img/boris.webp" type="image/webp">
                     <img loading="lazy" src="img/boris.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
@@ -152,7 +165,7 @@
   
               <li class="hero__item swiper-slide">
                 <figure>
-                  <picture class="swiper-slide">
+                  <picture>
                     <source srcset="img/lui.avif" type="image/avif">
                     <source srcset="img/lui.webp" type="image/webp">
                     <img loading="lazy" src="img/lui.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
@@ -164,7 +177,7 @@
   
               <li class="hero__item swiper-slide">
                 <figure>
-                  <picture class="swiper-slide">
+                  <picture>
                     <source srcset="img/piter.avif" type="image/avif">
                     <source srcset="img/piter.webp" type="image/webp">
                     <img loading="lazy" src="img/piter.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
@@ -176,7 +189,7 @@
   
               <li class="hero__item swiper-slide">
                 <figure>
-                  <picture class="swiper-slide">
+                  <picture>
                     <source srcset="img/kenny.avif" type="image/avif">
                     <source srcset="img/kenny.webp" type="image/webp">
                     <img loading="lazy" src="img/kenny.png" alt="Фотография Бориса" class="hero__image" width="80" height="80">
@@ -184,19 +197,7 @@
                 </figure>
   
                 <figcaption>Кенни</figcaption>
-              </li>
-
-              <li class="hero__item swiper-slide">
-                <figure>
-                  <picture class="swiper-slide">
-                    <source srcset="img/sara.avif" type="image/avif">
-                    <source srcset="img/sara.webp" type="image/webp">
-                    <img loading="lazy" src="img/sara.png" alt="Фотография Сары" class="hero__image" width="80" height="80">
-                  </picture>              
-                </figure>
-  
-                <figcaption>Сара</figcaption>
-              </li>
+              </li>              
             </ul>
           </div>
         </div>
@@ -764,13 +765,5 @@
       </div>
     </div>    
   </div>
-
-
-<!-- <div class="grid">
-  <div class="element elem1">elem1</div>
-  <div class="element elem2">elem2</div>
-  <div class="element elem3">elem3</div>
-</div> -->
-
 </body>
 </html>
