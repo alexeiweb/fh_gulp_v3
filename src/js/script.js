@@ -65,14 +65,14 @@ const popup = document.querySelector('.popup');
 const headerNav = document.querySelector('.burger__menu');
 
 burger.addEventListener('click', () => {
-  popup.classList.add('active');
-  headerNav.classList.add('active');
+  popup.classList.toggle('popup_active');
+  headerNav.classList.toggle('burger_active');
 });
 
 
 $('.burger__menu_item a').on('click', function(){
-  $('.burger__menu').removeClass('active');
-  $('.popup').removeClass('active');
+  $('.burger__menu').removeClass('burger_active');
+  $('.popup').removeClass('popup_active');
 });
 
 

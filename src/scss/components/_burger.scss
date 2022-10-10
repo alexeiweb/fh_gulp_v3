@@ -1,17 +1,20 @@
 .burger {
   &__menu {
-    position: relative;
+    position: absolute;
     max-width: 394px;
     width: 100%;
     background-color: $bg-color;
-    // visibility: hidden;
-    // opacity: 0;
-    // transition: opacity 0.36s ease-in-out visibility 0.36s ease-in-out;
-  
-    // &_active {
-    //   visibility: visible;
-    //   opacity: 1;
-    // }
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+
+    @media (max-width: 1280px) {
+      max-width: 349px;
+    }
+
+    @media (max-width: 767px) {
+      max-width: 270px;
+    }
 
     &:before {
       position: absolute;
@@ -22,8 +25,13 @@
       height: 30px;
       background-image: url('../img/triangle.svg');
       z-index: -1;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
-  
+
+    /* Нижняя полоса */  
     &:after {
       position: absolute;
       display: block;
@@ -33,22 +41,53 @@
       height: 10px;
       background-color: $orange-color;
     }
+  }
   
-    &_list {
-      padding-top: 70px;
-      padding-left: 39px;
-      padding-bottom: 50px;
+  &_active {
+    visibility: visible;
+    opacity: 1;
+    //transition: opacity 0.36s ease-in-out visibility 0.36s ease-in-out;    
+  }
+
+  &__list {
+    padding-top: 70px;
+    padding-left: 39px;
+    padding-bottom: 50px;
+
+    @media (max-width: 1280px) {
+      padding-top: 40px;
+      padding-bottom: 30px;
     }
 
-    &_item {
+    @media (max-width: 767px) {
+      padding-top: 20px;
+      padding-left: 10px;
+    }
+
+    & li {
       font-weight: 500;
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 15px;
-
+  
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    line-height: 30px;
+
+    @media (max-width: 1280px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 
@@ -62,5 +101,11 @@
     border: none; /* Отменяем отображение границы (Firefox) */
     margin-bottom: 15px;
     margin-left: -20px;
+
+    @media (max-width: 767px) {
+      max-width: 270px;
+      height: 1px;
+      margin-left: -6px;
+    }
   }
 }

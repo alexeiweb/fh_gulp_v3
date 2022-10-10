@@ -8,12 +8,36 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.36s ease-in-out visibility 0.36s ease-in-out;
+
+  @media (max-width: 1280px) {
+    max-width: 680px;
+  }
+
+  @media (max-width: 1023px) {
+    max-width: 540px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 270px;
+  }
   
   &__container {
     position: relative;
     padding: 50px 100px;
     background-color: $bg-color;
     border-radius: 20px;
+    
+    @media (max-width: 1280px) {
+      padding: 50px 93px;
+    }
+  
+    @media (max-width: 1023px) {
+      padding: 40px 60px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 29px 30px;
+    }
   }
 
   &__title {
@@ -23,14 +47,39 @@
     text-align: center;
     color: $orange-color;
     margin: 0 auto 30px; /* 30px - margin-bottom */
+    
+    @media (max-width: 1280px) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  
+    @media (max-width: 1023px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 
   &__text {
     margin-bottom: 20px;
     text-align: center;
-  }
 
-  &__subtitle span {
+    @media (max-width: 1280px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  
+    @media (max-width: 1023px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  
+  & span {
     font-weight: 500;
     color: $orange-color;
   }
@@ -42,6 +91,24 @@
     font-weight: 500;
     margin-bottom: 60px;
 
+    @media (max-width: 1280px) {
+      font-size: 18px;
+      line-height: 24px;      
+      gap: 40px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
     &_phone {
       &:before {
         content: "";
@@ -51,6 +118,10 @@
         height: 24px;
         margin-right: 14px;
         background: url("../img/call.svg") no-repeat;
+
+        @media (max-width: 1280px) {
+          margin-right: 10px;
+        }
       }
     }
 
@@ -63,6 +134,10 @@
         height: 24px;
         margin-right: 14px;
         background: url("../img/mail.svg") no-repeat;
+
+        @media (max-width: 1280px) {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -79,6 +154,13 @@
     margin: 0;
     border: 0;
     margin-bottom: 40px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
   }
 
   &__label {
@@ -96,6 +178,11 @@
     padding-right: 15px;
     border: none;
 
+    @media (max-width: 1280px) {
+      width: 200px;
+      height: 35px;
+    }
+
     &:hover {
       border: 1px solid #CBCBCB;
     }
@@ -106,15 +193,29 @@
   }
 
   &__form {
+    @media (max-width: 1280px) {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
     &_btn {
       display: block;
       margin-left: auto;
+
+      @media (max-width: 767px) {
+        margin: 0 auto;
+      }
     }
   }
 
   &__btn {
     &_image {
       transition: .3s ease-in-out;
+
+      @media (max-width: 767px) {
+        width: 61px;
+        height: 59px;
+      }
 
       &:hover {
         filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
@@ -130,6 +231,10 @@
       text-transform: uppercase;
       color: $orange-color;
       transition: .3s ease-in-out;
+
+      @media (max-width: 767px) {
+        font-size: 8px;
+      }
   
       &:hover {
         filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
@@ -145,6 +250,18 @@
     background-color: transparent;
     line-height: 0; /* чтобы убрать у SVG отступ снизу */
     color: inherit;
+
+    & svg {
+      @media (max-width: 767px) {
+        width: 16px;
+        height: 16px;
+      }      
+    }
+
+    @media (max-width: 767px) {
+      right: 11px;
+      top: 8px;
+    }
   }
 }
 
